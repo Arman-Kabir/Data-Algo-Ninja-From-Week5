@@ -24,10 +24,19 @@ function merge(arr1, arr2) {
 
 function mergeSort(arr) {
     let mid = Math.floor(arr.length / 2);
-    const left = arr.slice(0, mid);
-    const right = arr.slice(mid);
+    if (arr.length <= 1) return arr;
+    const left = mergeSort(arr.slice(0, mid));
+    const right = mergeSort(arr.slice(mid));
+
+    return merge(left, right);
 }
 
-console.log(merge([1, 3, 5], [2, 4, 6, 9]));
 
-console.log(mergeSort([]));
+
+console.log(mergeSort([7, 3, 9, 8, 10]));
+
+// console.log(merge([1, 3, 5], [2, 4, 6, 9]));
+
+// The Slice() method returns selected elements in an array, as a new array
+// The Slice() method selects from a given start, up to a(not inclusive) given end.
+// The slice() method does not change the original array.
