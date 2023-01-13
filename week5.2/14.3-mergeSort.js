@@ -25,10 +25,13 @@ function merge(arr1, arr2) {
 function mergeSort(arr) {
     let mid = Math.floor(arr.length / 2);
     if (arr.length <= 1) return arr;
+
     const left = mergeSort(arr.slice(0, mid));
     const right = mergeSort(arr.slice(mid));
-
     return merge(left, right);
+
+    // upper 3 lines in 1 line ->
+    // return merge(mergeSort(arr.slice(0,mid)),mergeSort(arr.slice(mid)))
 }
 
 
