@@ -1,4 +1,21 @@
 
+// Merge Sort
+// Breakdown Merge sort
+// Single item is always sorted
+
+// MERGE
+/**
+      i
+ [1,3,5] [2,4,6,9]
+              j
+[1,2,3,4,5,6,9]
+
+
+
+ [1,2,3,4,5,6,9]
+
+
+ */
 function merge(arr1, arr2) {
     const results = [];
     let i = 0;
@@ -9,7 +26,7 @@ function merge(arr1, arr2) {
             i++;
         } else {
             results.push(arr2[j]);
-            j++
+            j++;
         }
     }
     while (i < arr1.length) {
@@ -22,8 +39,5 @@ function merge(arr1, arr2) {
     }
     return results;
 }
-
-
-
 
 console.log(merge([1, 3, 5], [2, 4, 6, 9]));
