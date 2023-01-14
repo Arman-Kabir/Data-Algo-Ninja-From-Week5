@@ -18,9 +18,10 @@ Maintain exact order
 
 
 /*
-    i
- p
 [5, 9, 7, 4 ,2, 3]
- s
+               i
+ p
+[3, 4, 2, 5 ,7, 9]
+          s
 
 */
