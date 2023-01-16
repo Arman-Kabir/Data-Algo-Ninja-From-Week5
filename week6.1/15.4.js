@@ -45,6 +45,7 @@ class LinkedList {
     }
 
     // Remove from the beginning
+    // time complexity --- O(1)
     shift(){
         if(!this.head) return null
 
@@ -53,6 +54,9 @@ class LinkedList {
         temp.next = null;
         this.length--;
 
+        if(this.length ===0){
+            this.tail = null
+        }
         return temp;
     }
 }
