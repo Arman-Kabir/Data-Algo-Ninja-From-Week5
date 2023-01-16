@@ -17,6 +17,7 @@ class LinkedList {
         this.length = 1;
     }
     // adding node at the end of the linked list
+    // time complexity-- O(1)
     push(value) {
         const newNode = new Node(value);
         if (!this.head) {
@@ -27,7 +28,20 @@ class LinkedList {
             this.tail = newNode;
         }
         this.length++;
-        
+    }
+
+    // Adding node at the beginning
+    // time complexity -- O(1)
+    unshift(value) {
+        const newNode = new Node(value);
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
     }
 }
 
