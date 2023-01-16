@@ -61,8 +61,29 @@ class LinkedList {
     }
 
     // Remove item from the end
+    // time complexity -- O(n)
     pop(){
-        
+
+        /*
+        t
+        10-->15 -->8-->null
+        p
+        */
+        if(!this.head) return null;
+        let temp = this.head;
+        let pre = this.head;
+        while(temp.next){
+            pre=temp
+            temp = temp.nextSibling;
+        }
+        this.tail = pre;
+        this.tail.next = null;
+        length--;
+        if(this.length ==0){
+            this.head = null;
+            this.tail = null;
+        }
+        return temp;
     }
 }
 
