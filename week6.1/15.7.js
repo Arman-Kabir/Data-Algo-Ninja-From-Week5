@@ -98,7 +98,16 @@ class LinkedList {
         return temp;
     }
 
-    
+    // inserting item at specific index
+    // time complexity-- O(n)
+    set(index,value) {
+        let temp = this.get(index);
+        if(temp){
+            temp.value = value;
+            return true 
+        }
+        return false;
+    }
 }
 
 const linkedList = new LinkedList(10);
