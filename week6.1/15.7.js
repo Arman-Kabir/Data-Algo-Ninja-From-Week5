@@ -100,13 +100,32 @@ class LinkedList {
 
     // inserting item at specific index
     // time complexity-- O(n)
-    set(index,value) {
+    set(index, value) {
         let temp = this.get(index);
-        if(temp){
+        if (temp) {
             temp.value = value;
-            return true 
+            return true
         }
         return false;
+    }
+
+    // inserting node at specific index
+    // time complexity - O(n)
+    insert(index, value) {
+        // validate index
+        if (index < 0 || index > this.length) return false;
+        // inserting item at the beginning
+        if (this.index === 0) return this.unshift(value)
+        // inserting node at the end
+        if (this.index === this.length) return this.push(value)
+        // inserting in between
+        const newNode = new Node(value)
+        // Stopping just before the index node
+        const temp = this.get(index - 1)
+        newNode.next = temp.next
+        temp.next = newNode
+        this.length++;
+        return true;
     }
 }
 
