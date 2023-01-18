@@ -147,6 +147,7 @@ class LinkedList {
     }
 
     // reversing the linked list
+    // time complexity - O(n)
     reverse() {
         // changing the head to tail,tail to head
         let temp = this.head;
