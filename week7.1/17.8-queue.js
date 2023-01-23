@@ -27,6 +27,20 @@ class Queue {
         this.last = newNode;
         this.length = 1;
     }
+
+    // adding item at the end of the list
+    enqueue() {
+        const newNode = new Node(value);
+        if (!this.first) {
+            this.first = newNode;
+            this.least = newNode;
+        } else {
+            this.last.next = newNode
+            this.last = newNode
+        }
+        this.length++;
+        return this;
+    }
 }
 
 
