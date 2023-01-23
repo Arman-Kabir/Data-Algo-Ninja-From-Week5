@@ -9,15 +9,15 @@ class Node {
 
 class Queue {
     constructor(value) {
-        const newNode = newNode(value);
-        this.value = value
+        const newNode = new Node(value);
+        // this.value = value
         this.first = newNode;
         this.last = newNode;
         this.length = 1;
     }
 
     // adding item at the end of the list
-    enqueue() {
+    enqueue(value) {
         const newNode = new Node(value);
         if (!this.first) {
             this.first = newNode;
@@ -35,7 +35,7 @@ class Queue {
         let temp = this.first
         if (this.length === 1) {
             this.first = null;
-            this.last = null
+            this.last = null;
         } else {
             this.first = this.first.next;
             temp.next = null;
@@ -44,6 +44,12 @@ class Queue {
         return temp;
     }
 }
+
+const queue = new Queue(2);
+console.log(queue.enqueue(3));
+console.log(queue.enqueue(4));
+console.log(queue.dequeue());
+console.log(queue);
 
 
 
