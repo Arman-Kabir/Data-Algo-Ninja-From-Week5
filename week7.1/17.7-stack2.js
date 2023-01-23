@@ -34,15 +34,21 @@ class Stack {
         this.length--;
         return temp;
     }
+    peek(){
+        const temp = this.pop();
+        this.push(temp);
+        return temp;
+    }
 }
 
 const stack = new Stack(10);
 console.log(stack.push(2));
 console.log(stack.push(3));
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.pop());
 // console.log(stack.pop());
+console.log(stack.peek());
+// console.log(stack.pop());
+// console.log(stack.pop());
+console.log(stack);
 
 
 
