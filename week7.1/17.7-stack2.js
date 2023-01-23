@@ -1,4 +1,4 @@
-
+// stack3.png
 class Node {
     constructor(value) {
         this.value = value;
@@ -8,7 +8,7 @@ class Node {
 
 class Stack {
     constructor(value) {
-        const newNode = new Node(10);
+        const newNode = new Node(value);
         this.top = newNode;
         this.length = 1;
     }
@@ -23,8 +23,28 @@ class Stack {
             this.top = newNode;
         }
         this.length++
+        return this
+    }
+
+    pop() {
+        if (this.length === 0) return null
+        let temp = this.top;
+        this.top = temp.next;
+        temp.next = null
+        this.length--;
+        return temp;
     }
 }
+
+const stack = new Stack(10);
+console.log(stack.push(2));
+console.log(stack.push(3));
+console.log(stack.pop());
+console.log(stack.pop());
+console.log(stack.pop());
+// console.log(stack.pop());
+
+
 
 
 
