@@ -52,4 +52,10 @@ console.log(queue.dequeue());
 console.log(queue);
 
 
+// Array as  stack
+
+
+// array as queue
+
+
 
